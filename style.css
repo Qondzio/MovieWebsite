@@ -1,0 +1,174 @@
+html {
+    overflow-y: scroll;
+  }
+body
+{
+    background-color: #1a1c23;
+    margin: auto;
+}
+
+header
+{
+    padding: 30px 100px;
+}
+
+header a
+{
+    font-family: "Rowdies";
+    text-decoration: none;
+    color:white;
+    font-size: 30px;
+}
+
+.searchBar
+{
+    float: right;
+}
+
+.searchBar input
+{
+    padding: 10px;
+    border: 0px;
+    border-radius: 10px;
+    outline: none;
+    width: 300px;
+    font-size: 18px;
+    box-shadow: none;
+}
+
+main
+{
+    padding: 100px 50px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.movieCard
+{
+    width: 250px;
+    margin: 30px;
+    padding: 15px;
+    border-radius: 20px;
+    background-color: #313542;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    transition: transform .2s ;
+}
+.movieCard img
+{
+    border-radius: 10px;
+    width: 100%;
+}
+
+
+.movieCard:hover
+{
+    transform: scale(1.1);
+}
+
+.movieCard h3
+{
+    font-size: 21px;
+    color: white;
+    font-family: "Open Sans";
+    text-align: center;
+    align-content: center;
+    height: 100%;
+}
+
+
+.movieCardPopout
+{
+    position: fixed;
+    background-color: grey;
+    top: -100%;
+    left: 50%;
+    opacity:1;
+    display:flex;
+    flex-direction: row;
+    border-radius: 20px;
+    background-color: #313542;
+    transform: translate(-50%,-50%);
+}
+
+.movieCardPopout .left
+{
+    width: 300px;
+    margin: 25px 25px 0px 25px;
+    display: flex;
+    flex-direction: column;
+}
+
+.movieCardPopout img
+{
+    border-radius: 20px;
+}
+
+.movieCardPopout .left h3
+{
+    font-size: 25px;
+    color: white;
+    font-family: "Open Sans";
+    text-align: center;
+    align-content: center;
+    height: 100%;
+}
+
+
+.movieCardPopout .right
+{
+    width: 500px;
+    display: flex;
+    padding-right: 25px;
+    align-items: center;
+}
+
+.movieCardPopout p
+{
+    font-size: 18px;
+    color: white;
+    font-family: "Open Sans";
+    text-align: center;
+}
+
+.movieCardPopout .closeButton
+{
+    position: absolute;
+    top:15px;
+    right:15px;
+    width: 23px;
+    height: 23px;
+    border-radius: 50%;
+    outline:none;
+    border:none;
+    background: #cecdcd;
+    color:#111;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+
+body.activePopout main,
+body.activePopout header
+{
+    filter: blur(5px);
+    
+}
+
+
+body.activePopout .movieCardPopout
+{
+    top:50%;
+    opacity:1;
+    margin-top:0px;
+    transform: translate(-50%,-50%);
+}
+
+
+body.activePopout .movieCard
+{
+    cursor: default;
+    transform: none;
+}
